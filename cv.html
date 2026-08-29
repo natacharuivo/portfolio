@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natacha Ruivo | Curriculum Vitae</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --paper: #ffffff;
+  --line: rgba(20, 20, 20, 0.16);
+  --text: #111111;
+  --muted: #5f5a53;
+  --work-title-size: clamp(32px, 4.2vw, 54px);
+  --work-title-line: 1.08;
+  --work-title-gap: 118px;
+}
+
+* , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px;
+  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+  backdrop-filter: blur(14px);
+}
+
+.nav-brand {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn {
+  font-family: 'Manrope', sans-serif;
+}
+
+.btn-light {
+  color: var(--text);
+  border: 1px solid #141414;
+}
+
+#download-cv-btn {
+  min-height: 40px;
+  padding: 10px 14px;
+  background: transparent;
+  color: var(--text);
+  border-color: #141414;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+#download-cv-btn:hover {
+  color: var(--muted);
+  border-color: var(--line);
+}
+
+.btn-dark {
+  color: #fff;
+  background: #161616;
+  border: 1px solid #161616;
+}
+
+main {
+  max-width: 1220px;
+  margin: 42px auto 80px;
+  padding: 0 32px;
+}
+
+.cv-sheet {
+  background: var(--paper);
+  padding: clamp(28px, 4vw, 52px);
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(30px, 4vw, 64px);
+}
+
+.cv-grid > aside {
+  padding-top: calc(var(--work-title-size) * var(--work-title-line) + var(--work-title-gap));
+}
+
+.section-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: var(--work-title-size);
+  line-height: var(--work-title-line);
+  font-weight: 600;
+  margin-bottom: var(--work-title-gap);
+}
+
+.cv-name-label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #141414;
+  margin-bottom: 10px;
+}
+
+.role {
+  margin-bottom: 30px;
+}
+
+.role-company {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.role-meta {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.gap-year-note {
+  margin-bottom: 24px;
+}
+
+.role-context {
+  font-size: 14px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.role ul {
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+
+.role li {
+  font-size: 14px;
+}
+
+.side-block {
+  margin-bottom: 30px;
+}
+
+.education-block {
+  margin-top: 30px;
+}
+
+.side-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.side-item {
+  margin-bottom: 14px;
+}
+
+.side-block-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.side-title-note {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.side-item strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.side-item p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.side-item p.skills-line {
+  color: var(--text);
+}
+
+body.pdf-export {
+  background: #fff;
+}
+
+body.pdf-export main {
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body.pdf-export .cv-sheet {
+  width: 210mm;
+  height: 297mm;
+  padding: 8mm;
+  overflow: hidden;
+}
+
+body.pdf-export .cv-grid {
+  gap: 6mm;
+}
+
+body.pdf-export .cv-grid > aside {
+  padding-top: 0;
+}
+
+body.pdf-export .section-title {
+  font-size: 30px;
+  line-height: 1.05;
+  margin-bottom: 12px;
+}
+
+body.pdf-export .role {
+  margin-bottom: 8px;
+  break-inside: avoid;
+}
+
+body.pdf-export .role-company {
+  font-size: 13px;
+}
+
+body.pdf-export .role-meta,
+body.pdf-export .role-context,
+body.pdf-export .role li,
+body.pdf-export .side-item p,
+body.pdf-export .side-item strong,
+body.pdf-export .side-title,
+body.pdf-export .side-block-note,
+body.pdf-export .side-title-note {
+  font-size: 11px;
+  line-height: 1.28;
+}
+
+body.pdf-export .side-item strong,
+body.pdf-export .side-title {
+  font-weight: 700;
+}
+
+body.pdf-export .side-block {
+  margin-bottom: 10px;
+  break-inside: avoid;
+}
+
+body.pdf-export aside .side-block + .side-block {
+  padding-top: 16px;
+}
+
+body.pdf-export .side-item {
+  margin-bottom: 6px;
+}
+
+body.pdf-export .awards-list {
+  column-count: 2;
+  column-gap: 10px;
+}
+
+body.pdf-export .awards-list .side-item {
+  break-inside: avoid;
+}
+
+body.pdf-export .role ul {
+  gap: 3px;
+}
+
+body.pdf-export .gap-year-note {
+  margin-bottom: 8px;
+}
+
+body.pdf-export .shortcut-role {
+  break-before: page;
+  page-break-before: always;
+  padding-top: 12mm;
+}
+
+.pdf-scale-wrap {
+  transform-origin: top left;
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding: 0 18px;
+    height: 68px;
+  }
+
+  main {
+    padding: 0 18px;
+    margin-top: 24px;
+  }
+
+  .cv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cv-grid > aside {
+    padding-top: 0;
+  }
+
+  .section-title {
+    font-size: 38px;
+  }
+
+  .side-title {
+    font-size: 18px;
+  }
+
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 6mm 10mm 10mm;
+  }
+
+  @page:first {
+    margin-top: 10mm;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  nav {
+    display: none;
+  }
+
+  main {
+    margin: 0;
+    max-width: none;
+    padding: 0;
+  }
+
+  .cv-sheet {
+    border: 0;
+    padding: 8px 16px 12px;
+  }
+
+  .cv-grid {
+    gap: 24px;
+  }
+
+  .role {
+    margin-bottom: 18px;
+  }
+
+  .side-block {
+    margin-bottom: 16px;
+  }
+
+  aside .side-block + .side-block {
+    padding-top: 16px;
+  }
+
+  .side-item {
+    margin-bottom: 8px;
+  }
+
+  .section-title {
+    margin-bottom: 52px;
+  }
+
+  .awards-list {
+    column-count: 2;
+    column-gap: 10px;
+  }
+
+  .awards-list .side-item {
+    break-inside: avoid;
+  }
+
+  .shortcut-role {
+    break-before: page;
+    page-break-before: always;
+    margin-top: 0;
+    padding-top: 12mm;
+  }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-brand">NATACHA RUIVO</a>
+  <div class="nav-actions">
+    <button type="button" class="btn btn-light" id="download-cv-btn">Download CV PDF</button>
+  </div>
+</nav>
+
+<main>
+  <article class="cv-sheet" aria-label="Curriculum vitae">
+    <div class="cv-grid">
+      <section>
+        <p class="cv-name-label">Natacha Ruivo</p>
+        <h2 class="section-title">Work Experience</h2>
+
+        <article class="role">
+          <p class="role-company">Senior UXD at Critical Techworks | a BMW Group Company</p>
+          <p class="role-meta">Fev 2020 - Present&ensp;·&ensp; Lisbon | Germany</p>
+          <p class="role-context">Critical TechWorks is a joint venture to lead the future of motion. We're developing the next generation of software systems for the BMW's future driving machines.</p>
+          <ul>
+            <li>Designed BMW in-car Media and Entertainment experiences across multi-display ecosystems for front and rear seats, creating seamless cross-screen interactions for drivers and passengers.</li>
+            <li>Built a BMW dealership configurator tool and B2B stock management dashboard, introducing user-centered design practices and a B2C design system. I also contributed to a shop-floor assembly tool.</li>
+            <li>Part of a team of 5 UX designers leading the integration and adoption of AI-assisted and AI-native workflows for 100+ designers, leveraging BMW-approved AI tools to improve efficiency, design quality, and speed across research, ideation, prototyping, and implementation.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <p class="role-company">Senior Experience Design at BCG Digital Ventures (BCGX)</p>
+          <p class="role-meta">Jun 2018 - Jan 2020 &ensp;·&ensp; Germany | China</p>
+          <p class="role-context">BCG Digital Ventures, part of BCG X, builds and scales innovative businesses with the world's most influential companies.</p>
+          <ul>
+            <li>Designed a digital vision care venture for Zeiss in China with AR virtual try-on and Machine Learning-driven personalization, from product discovery and validation through build and launch.</li>
+            <li>Part of a venture validation process for BASF and Redesigned a scalable people development model, aligning employee growth and BCG Digital Ventures' mission.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <p class="role-company">Senior Product Designer at Babbel</p>
+          <p class="role-meta">April 2017 - Jun 2018&ensp;·&ensp; Germany</p>
+          <ul>
+            <li>Led product design across multiple initiatives, delivering end-to-end experiences in close collaboration with cross-functional teams. Drove consistency across products, improved design processes and practices, and supported team growth through weekly 1:1 mentoring.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <p class="role-company">Senior UXD &amp; Business Development at Minitheory</p>
+          <p class="role-meta">Jan 2015 - Mar 2017&ensp;·&ensp; Singapore</p>
+          <ul>
+            <li>As the UX Lead Designer, I focused on mobile apps, responsive web, and software projects for enterprises, organizations, and startups within various sectors.</li>
+            <li>Led a project with SUEZ and Singapore's National Water Agency (PUB) to develop a system that improved water supply monitoring and flood prevention. The solution enabled event prediction, supported decision-making, and reduced response times for water quality issues.</li>
+          </ul>
+        </article>
+
+        <p class="role-meta gap-year-note">(Gap Year Backpacking)</p>
+
+        <article class="role shortcut-role">
+          <p class="role-company">UX/UI Product Designer at Shortcut AS</p>
+          <p class="role-meta">Aug 2012 - Dec 2013&ensp;·&ensp; Norway</p>
+          <ul>
+            <li>Designed iOS and Android applications for healthcare (Pfizer), finance (Nordea Bank), and a B2B iPad tool (Adecco) from research to pixel-perfect execution, working in close collaboration with developers.</li>
+          </ul>
+        </article>
+
+        <article class="role">
+          <p class="role-company">UX Designer at Mobients Inc</p>
+          <p class="role-meta">Jul 2011 - Jul 2012&ensp;·&ensp; United States</p>
+          <ul>
+            <li>Worked across various teams and departments, responsible for designing UX flows and wireframes as part of a one year project for the telecom AT&amp;T.</li>
+          </ul>
+        </article>
+      </section>
+
+      <aside>
+        <section class="side-block education-block">
+          <h3 class="side-title">Education</h3>
+          <div class="side-item">
+            <strong>The Oslo School of Architecture and Design</strong>
+            <p>MA in Interaction Design &ensp;·&ensp; 2007 - 2010</p>
+          </div>
+          <div class="side-item">
+            <strong>Faculty of Architecture, University of Lisbon</strong>
+            <p>BA in Product Design &ensp;·&ensp; 2004 - 2007</p>
+          </div>
+        </section>
+
+        <section class="side-block awards-block">
+          <h3 class="side-title">Academic Honors &amp; Awards</h3>
+          <div class="awards-list">
+          <div class="side-item">
+            <span style="font-size: 14px;">Best Interaction Design Student Prize</span>
+            <p>Issued by Making Waves &ensp;·&ensp; Jun 2010</p>
+          </div>
+          <div class="side-item">
+            <span style="font-size: 14px;">Best Courage in Design Student (Nominated)</span>
+            <p>Issued by Accenture &ensp;·&ensp; Jun 2010</p>
+          </div>
+          <div class="side-item">
+            <span style="font-size: 14px;">Best Innovation in Design Student Prize (Nominated)</span>
+            <p>Issued by Norwegian Design Council &ensp;·&ensp; Jun 2010</p>
+          </div>
+          <div class="side-item">
+            <span style="font-size: 14px;">European Talent Awards (Pre-Selected)</span>
+            <p>Issued by Talent Awards &ensp;·&ensp; Jun 2008</p>
+          </div>
+          <div class="side-item">
+            <span style="font-size: 14px;">Best Design for all Student Prize</span>
+            <p>Issued by Gazzete &ensp;·&ensp; Jan 2008</p>
+          </div>
+          <div class="side-item">
+            <span style="font-size: 14px;">Best Design for all Class Prize</span>
+            <p>Issued by Gazzete &ensp;·&ensp; Dec 2007</p>
+          </div>
+          </div>
+        </section>
+
+        <section class="side-block">
+          <h3 class="side-title">Skills</h3>
+          <div class="side-item">
+            <p class="skills-line">User Research • Service Design • Full Product Lifecycle, from Discovery to Delivery • Design Systems • Exploring AI Assisted &amp; AI Native Tools • Product Strategy • Cross-functional Leadership • Stakeholder Management • Design Mentoring</p>
+          </div>
+        </section>
+
+        <section class="side-block">
+          <h3 class="side-title">Contact</h3>
+          <div class="side-item">
+            <strong>Email</strong>
+            <p>natachaamruivo@gmail.com</p>
+            <p>+351 933395252</p>
+            <p><a href="https://www.linkedin.com/in/natacharuivo/?skipRedirect=true" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </article>
+</main>
+<script>
+  var downloadCvBtn = document.getElementById('download-cv-btn');
+
+  if (downloadCvBtn) {
+    downloadCvBtn.addEventListener('click', function () {
+      window.print();
+    });
+  }
+</script>
+</body>
+</html>

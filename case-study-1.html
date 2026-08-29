@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study 1 - Natacha Ruivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f9f7f3;
+  --line: rgba(20, 20, 20, 0.12);
+  --line-strong: rgba(20, 20, 20, 0.2);
+  --text: #141414;
+  --muted: #66615a;
+  --accent: #181818;
+}
+
+* , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  line-height: 1.58;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 36px;
+  background: #ffffff;
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-brand {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #2a2a2a;
+  text-decoration: none;
+  letter-spacing: -0.03em;
+  line-height: 1.3;
+  padding: 16px 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 1px solid transparent;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--muted);
+  border-bottom-color: var(--muted);
+}
+
+.nav-links a.active,
+.nav-links a[aria-current="page"] {
+  color: #141414;
+  border-bottom-color: #141414;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid #141414;
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.nav-cta:hover { color: var(--text); border-color: #141414; }
+
+.nav-toggle {
+  display: none;
+  margin-left: auto;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.nav-toggle-bars {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 22px;
+  margin: 0 auto;
+}
+
+.nav-toggle-bars span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.98);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    box-shadow: 0 20px 40px rgba(20, 20, 20, 0.08);
+  }
+
+  nav.menu-open .nav-menu {
+    display: flex;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin: 0;
+  }
+
+  .nav-links a,
+  .nav-cta {
+    font-size: 12px;
+  }
+
+  .nav-cta {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+main {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 160px 32px 80px;
+}
+
+h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(38px, 4.8vw, 62px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  max-width: 1200px;
+  margin-bottom: 18px;
+}
+
+p {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 17.5px;
+  line-height: 1.72;
+}
+
+.case-study-image {
+  width: 100vw;
+  height: clamp(260px, 42vw, 620px);
+  margin-top: 36px;
+  margin-left: calc(50% - 50vw);
+  background: url('ph6.png') center bottom / cover no-repeat;
+  border-radius: 0;
+}
+
+.outcome-row {
+  display: grid;
+  grid-template-columns: 1.05fr 1.1fr;
+  gap: 20px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+.outcome-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(22px, 2vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #0f0f0f;
+  margin: 0 0 12px 0;
+}
+
+.outcome-subtitle {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(14px, 1.05vw, 16px);
+  font-weight: 400;
+  line-height: 1.7;
+  color: #444;
+  margin: 0 0 14px 0;
+}
+
+.outcome-subtitle:last-child {
+  margin-bottom: 0;
+}
+
+.outcome-rect {
+  background-color: #e8e8e8;
+  min-height: 140px;
+}
+
+.case-study-image-end {
+  width: 100%;
+  margin-top: 92px;
+  margin-left: 0;
+}
+
+.case-study-image-end img {
+  display: block;
+  width: 75%;
+  max-width: 1060px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.quote-section {
+  margin-top: 92px;
+  text-align: center;
+  padding: 0 clamp(20px, 6vw, 88px);
+}
+
+.quote-text {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(24px, 3.1vw, 46px);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  color: #0f0f0f;
+}
+
+.quote-credit {
+  margin-top: 72px;
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  font-size: clamp(14px, 1.2vw, 22px);
+  line-height: 1.25;
+  color: #141414;
+}
+
+.quote-credit::before {
+  content: "";
+  width: clamp(120px, 12vw, 210px);
+  height: 3px;
+  background: #141414;
+}
+
+.case-study-details {
+  margin-top: 28px;
+  margin-bottom: 80px;
+}
+
+.case-meta-inline {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(360px, 1.9fr);
+  gap: 52px;
+  margin-top: 0;
+  margin-bottom: 78px;
+  position: relative;
+}
+
+.case-meta-item {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.case-meta-item .meta-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.case-meta-item .meta-value {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.case-meta-item-year {
+  position: absolute;
+  top: 0;
+  right: 0;
+  gap: 3px;
+}
+
+.case-study-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(360px, 1.9fr);
+  gap: 52px;
+  align-items: start;
+}
+
+.outcome-impact-shell {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(360px, 1.9fr);
+  gap: 52px;
+}
+
+.outcome-impact-content {
+  grid-column: 1 / -1;
+}
+
+.outcome-impact-media {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+.details-left {
+  display: grid;
+  gap: 34px;
+}
+
+.responsibility-visual-stack {
+  display: grid;
+  gap: 18px;
+  margin-top: 0;
+}
+
+.responsibility-visual {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1 / 1;
+  min-height: unset;
+  background: #8a847d;
+}
+
+.responsibility-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.research-validation-section {
+  margin-top: 92px;
+}
+
+.research-highlights {
+  margin-top: 50px;
+}
+
+.details-item h2,
+.details-right h2 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.details-right h2.outcome-title {
+  font-size: clamp(22px, 2vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: #0f0f0f;
+  margin: 0 0 12px 0;
+}
+
+.single-line-heading {
+  white-space: nowrap;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  font-size: 12px;
+  position: relative;
+  top: -40px;
+}
+
+.emphasis-copy,
+.details-item p.emphasis-copy {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.55;
+  color: #141414;
+}
+
+.regular-copy {
+  font-weight: 400;
+}
+
+.details-item p {
+  max-width: 320px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #141414;
+}
+
+.details-right p {
+
+  max-width: 100%;
+  font-size: 17.5px;
+  line-height: 1.72;
+  color: #141414;
+  letter-spacing: 0;
+}
+
+.details-right p + p {
+  margin-top: 14px;
+}
+
+.details-right ul {
+  margin: 10px 0 0;
+  padding-left: 22px;
+  color: #262626;
+}
+
+.details-right li {
+  font-size: 15px;
+  line-height: 1.72;
+  margin-bottom: 10px;
+  color: #141414;
+}
+
+.research-highlights li {
+  font-size: 17.5px;
+  line-height: 1.72;
+}
+
+.card {
+  margin-top: 34px;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.card h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 15px;
+}
+
+.image-grid-section {
+  margin-top: 60px;
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;
+}
+
+.image-grid-section.image-grid-inline {
+  margin-top: 180px;
+  width: 100%;
+  margin-left: 0;
+}
+
+.image-grid-section.image-grid-inline .image-grid {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+}
+
+.details-left .image-grid-section.image-grid-inline + .details-item {
+  margin-top: 196px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 430px 430px;
+  row-gap: 20px;
+  column-gap: 40px;
+  align-items: stretch;
+}
+
+.image-grid-section > p {
+  margin-top: 12px;
+}
+
+.image-grid .image-left {
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 380px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  margin-top: 0;
+}
+
+.image-grid-section:not(.image-grid-inline) .image-top-right {
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 0;
+  height: 100%;
+  width: calc(100% + 120px);
+  aspect-ratio: auto;
+  background-image: none;
+}
+
+.image-grid-section:not(.image-grid-inline) .image-top-square {
+  grid-column: 2;
+  grid-row: 1;
+  min-height: 0;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  justify-self: end;
+  margin-top: 0;
+  background-image: none;
+}
+
+.image-grid-section:not(.image-grid-inline) .image-bottom-right {
+  grid-column: 2;
+  grid-row: 2;
+  min-height: 0;
+  height: 100%;
+  width: calc(100% + 120px);
+  max-width: none;
+  aspect-ratio: auto;
+  justify-self: end;
+  align-self: start;
+  margin-top: 0;
+  background-image: none;
+}
+
+.image-grid-section:not(.image-grid-inline) .image-bottom-square {
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 0;
+  width: auto;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  justify-self: start;
+  margin-top: 0;
+}
+
+.image-placeholder {
+  position: relative;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  background: #8a847d;
+  overflow: hidden;
+}
+
+.image-placeholder::before {
+  content: none;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #6d665e;
+}
+
+.image-placeholder::after {
+  content: none;
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  font-size: 13px;
+  color: #6d665e;
+}
+
+.two-column-text-section {
+  margin-top: 84px;
+}
+
+.two-column-text-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(360px, 1.9fr);
+  gap: 52px;
+  align-items: start;
+}
+
+.two-column-heading h2 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.two-column-body p {
+  max-width: 100%;
+  font-size: 17.5px;
+  line-height: 1.72;
+  color: #262626;
+}
+
+.split-feature-section {
+  margin-top: 84px;
+}
+
+.split-feature-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(320px, 1fr);
+  gap: 52px;
+  align-items: start;
+}
+
+.split-feature-visual {
+  background: #8a847d;
+  min-height: 420px;
+}
+
+.split-feature-content h2 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.split-feature-content ul {
+  margin: 0;
+  padding-left: 22px;
+  color: #262626;
+}
+
+.split-feature-content li {
+  font-size: 17.5px;
+  line-height: 1.72;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 760px) {
+  nav {
+    height: 58px;
+    padding: 0 18px;
+  }
+
+  main {
+    padding: 110px 18px 56px;
+  }
+
+  .case-study-details {
+    margin-top: 56px;
+    margin-bottom: 44px;
+  }
+
+  .quote-section {
+    margin-top: 56px;
+    padding: 0 24px;
+  }
+
+  .quote-text {
+    font-size: clamp(22px, 6.2vw, 32px);
+    line-height: 1.12;
+  }
+
+  .quote-credit {
+    margin-top: 36px;
+    gap: 14px;
+    font-size: 14px;
+  }
+
+  .quote-credit::before {
+    width: 88px;
+    height: 2px;
+  }
+
+  .case-meta-inline {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 56px;
+    padding-right: 0;
+    position: static;
+  }
+
+  .case-meta-item-team {
+    margin-left: 0;
+  }
+
+  .case-meta-item-year {
+    position: static;
+    justify-self: start;
+  }
+
+  .case-study-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .outcome-impact-shell {
+    padding: 0 20px;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .outcome-impact-content {
+    grid-column: 1;
+  }
+
+  .outcome-impact-media {
+    margin-top: 0;
+  }
+
+  .details-left {
+    gap: 20px;
+  }
+
+  .details-item p {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .details-right p {
+    font-size: 17.5px;
+    line-height: 1.72;
+  }
+
+  .responsibility-visual {
+    min-height: 220px;
+  }
+
+  .responsibility-visual-stack {
+    margin-top: 36px;
+  }
+
+  .research-validation-section {
+    margin-top: 72px;
+  }
+
+  .research-highlights {
+    margin-top: 30px;
+  }
+
+  .image-grid-section {
+    margin-top: 48px;
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+
+  .image-grid-section.image-grid-inline {
+    margin-top: 52px;
+  }
+
+  .details-left .image-grid-section.image-grid-inline + .details-item {
+    margin-top: 128px;
+  }
+
+  .image-grid {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 14px;
+  }
+
+  .image-left,
+  .image-top-right,
+  .image-top-square,
+  .image-bottom-right,
+  .image-bottom-square {
+    grid-area: auto;
+    grid-column: 1;
+    grid-row: auto;
+    height: auto;
+  }
+
+  .image-left {
+    min-height: 380px;
+  }
+
+  .image-top-right,
+  .image-bottom-right {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .image-top-square,
+  .image-bottom-square {
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+  }
+
+  .image-bottom-right {
+    margin-top: 12px;
+  }
+
+  .two-column-text-section {
+    margin-top: 48px;
+  }
+
+  .two-column-text-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .split-feature-section {
+    margin-top: 48px;
+  }
+
+  .split-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .split-feature-visual {
+    min-height: 280px;
+  }
+
+  .case-study-image-end {
+    margin-top: 56px;
+  }
+}
+</style>
+</head>
+<body>
+<nav id="site-nav">
+  <a href="index.html" class="nav-brand">NATACHA RUIVO</a>
+  <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-nav-menu">
+    <span class="nav-toggle-bars" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+  <div class="nav-menu" id="site-nav-menu">
+    <ul class="nav-links">
+      <li><a href="index.html#what" class="active" aria-current="page">Work</a></li>
+      <li><a href="index.html#format">About</a></li>
+    </ul>
+    <a href="./cv.html" class="nav-cta" onclick="window.location.href='cv.html'; return false;">View CV</a>
+  </div>
+</nav>
+
+<main>
+  <p style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text); margin: 0 0 10px;">Critical Techworks | A BMW GROUP COMPANY</p>
+  <h1>Orchestrating entertainment across a multi-display in-car ecosystem</h1>
+    <p style="color: var(--text);">Turning context-aware in-car media experiences into safer and more engaging journeys with mobility limitations in mind.</p>
+  <div class="case-study-image" aria-hidden="true"></div>
+
+  <section class="case-study-details" aria-label="Case study summary">
+    <div class="case-meta-inline" aria-label="Case study metadata">
+      <div class="case-meta-item">
+        <span class="meta-label">Client:</span>
+        <span class="meta-value">Critical Techworks | A BMW Group Company</span>
+      </div>
+      <div class="case-meta-item case-meta-item-team">
+        <span class="meta-label">Industry:</span>
+        <span class="meta-value">Automotive</span>
+      </div>
+      <div class="case-meta-item case-meta-item-year">
+        <span class="meta-label">Year:</span>
+        <span class="meta-value">2024-2026</span>
+      </div>
+    </div>
+
+    <div class="case-study-grid">
+      <div class="details-left">
+        <article class="details-item">
+          <h2>Team</h2>
+          <p>3 UX Designers, 2 UI Designers, Stakeholders, 2 Product Managers, several Development Teams.</p>
+        </article>
+        <article class="details-item">
+          <h2>Responsibilities</h2>
+          <p>IDX UX Media &amp; Entertainment domain across all in-car front and rear-seat displays.</p>
+        </article>
+        <article class="details-item">
+        </article>
+      </div>
+      <article class="details-right">
+        <h2 class="outcome-title" style="margin-bottom: 28px;">Context</h2>
+        <p class="outcome-subtitle">With the introduction of BMW Operating System X (Neue Klasse), BMW's next-generation digital vehicle platform, the car evolved from a traditional infotainment system into a distributed ecosystem of connected displays and interactions.</p>
+        <p class="outcome-subtitle">From the BMW Panoramic Vision and central infotainment display to steering wheel controls, voice interfaces, the optional front passenger display, rear-seat entertainment, and integrated touch door controls, the in-car experience became increasingly interconnected.</p>
+        <p class="outcome-subtitle">As vehicle configurations became more personalized, the challenge shifted from designing individual screens to orchestrating a seamless experience across multiple touchpoints, user needs, and moments throughout the journey, while maintaining safety, clarity, and BMW's premium brand experience.</p>
+        <h2 class="outcome-title" style="margin-top: 36px; margin-bottom: 28px;">Product Goals</h2>
+        <p>As vehicles evolve into connected digital environments, media experiences must adapt to changing user needs, journey contexts, and safety requirements. This project explored how context-aware entertainment could deliver more relevant and engaging experiences throughout the journey while complying with BMW guidelines, automotive regulations, and legal constraints.</p>
+        <div class="research-validation-section" style="margin-top: 28px;">
+          <div class="research-highlights">
+            <h2 class="outcome-title" style="margin-bottom: 28px;">Design Challenges &amp; Areas of Focus</h2>
+            <ul>
+              <li>Regulatory and OEM constraints restricted and limited UI and interaction design.</li>
+              <li>Content relevance varied significantly across different journey driving types, context, and user seating needs.</li>
+              <li>Personalization opportunities were underutilized during the journey lifecycle.</li>
+              <li>Navigating complex internal processes, multiple stakeholder groups, product dependencies and regulatory requirements constrained product innovation and decision-making.</li>
+              <li>Cross-domain dependencies and fragmented ownership challenged the delivery of a consistent, cohesive, and holistic end-to-end experience.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
+
+  </section>
+
+  <section class="image-grid-section" aria-label="Image placeholders for case study visuals">
+    <div class="image-grid">
+      <div class="image-placeholder image-top-right" style="background-image:url('ph1.jpg');background-size:cover;background-position:center 40%;" aria-hidden="true"></div>
+      <div class="image-placeholder image-top-square" style="background-image:url('ph5.png');background-size:cover;background-position:center;" aria-hidden="true"></div>
+      <div class="image-placeholder image-bottom-square" style="background-image:url('ph13.png');background-size:195%;background-position:46% 24%;" aria-hidden="true"></div>
+      <div class="image-placeholder image-bottom-right" style="background-image:url('ph9.png');background-size:cover;background-position:center;" aria-hidden="true"></div>
+    </div>
+  </section>
+
+
+
+  <div class="case-study-image-end">
+    <div class="outcome-impact-shell">
+      <div class="outcome-impact-content">
+      <h2 class="outcome-title" style="margin-bottom: 28px;">Outcome and Impact</h2>
+      <p style="color: #0f0f0f; margin-bottom: 28px;">Beyond the day-to-day feature development cycle, I helped drive a more holistic and user-centered approach to Media across BMW's in-car ecosystem.</p>
+      <p style="color: #0f0f0f; margin-bottom: 28px;">I facilitated innovation and ideation workshops where the team identified new product opportunities, challenged assumptions, and aligned stakeholders around a shared vision.</p>
+      <p style="color: #0f0f0f; margin-bottom: 28px;">By revisiting and redefining our understanding of users through personas developed from qualitative user insights gathered over time, I helped establish knowledge that was shared across multiple in-car domains and the wider automotive UX community, increasing domain expertise and cross-functional alignment through regular knowledge-sharing sessions.</p>
+      <p style="color: #0f0f0f; margin-bottom: 28px;">I also contributed to a more user-centered product development process by advocating for stronger integration of quantitative data into our design practice, enabling the team to make more informed product decisions.</p>
+      <p style="color: #0f0f0f;">To address cross-domain dependencies and fragmented ownership, I created the Media Service Blueprint, providing a holistic view of user moments, needs, system interactions across multiple displays, and domain touchpoints throughout the in-car Media and Entertainment ecosystem.</p>
+      </div>
+      <div class="outcome-impact-media">
+      <video autoplay muted loop playsinline preload="metadata" style="width: 100%; aspect-ratio: 16 / 9; margin-top: 0; display: block; object-fit: cover; background: #e8e8e8;">
+        <source src="ph7v2 (1).mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline preload="metadata" style="width: 100%; aspect-ratio: 16 / 9; margin-top: 80px; display: block; object-fit: cover; background: #e8e8e8;">
+        <source src="ph12.mp4" type="video/mp4">
+      </video>
+      <p style="margin-top: 48px; font-size: 13px; line-height: 1.45; color: #66615a;">All images and videos shown in this case study are sourced from the official BMW website and blog.</p>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+  const nav = document.getElementById('site-nav');
+  const navToggle = nav.querySelector('.nav-toggle');
+  const navMenu = document.getElementById('site-nav-menu');
+  const mobileQuery = window.matchMedia('(max-width: 760px)');
+
+  function setMenuState(isOpen) {
+    nav.classList.toggle('menu-open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  }
+
+  navToggle.addEventListener('click', function () {
+    setMenuState(!nav.classList.contains('menu-open'));
+  });
+
+  navMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (mobileQuery.matches) {
+        setMenuState(false);
+      }
+    });
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!mobileQuery.matches || !nav.classList.contains('menu-open')) {
+      return;
+    }
+
+    if (!nav.contains(event.target)) {
+      setMenuState(false);
+    }
+  });
+
+  mobileQuery.addEventListener('change', function (event) {
+    if (!event.matches) {
+      setMenuState(false);
+    }
+
+    alignCaseStudyBlocks();
+  });
+
+  function alignResponsibilityVisuals() {
+    const visualStack = document.querySelector('.responsibility-visual-stack');
+    const researchSection = document.querySelector('.research-validation-section');
+
+    if (!visualStack || !researchSection) {
+      return;
+    }
+
+    if (mobileQuery.matches) {
+      visualStack.style.marginTop = '';
+      return;
+    }
+
+    visualStack.style.marginTop = '0px';
+    const delta = researchSection.getBoundingClientRect().top - visualStack.getBoundingClientRect().top;
+    const sharedLowerOffset = 0;
+    visualStack.style.marginTop = `${Math.max(0, Math.round(delta + sharedLowerOffset))}px`;
+  }
+
+  function alignResearchHighlightsWithSecondaryVisual() {
+    const secondaryVisual = document.querySelector('.responsibility-visual-secondary');
+    const highlights = document.querySelector('.research-highlights');
+
+    if (!secondaryVisual || !highlights) {
+      return;
+    }
+
+    if (mobileQuery.matches) {
+      highlights.style.marginTop = '';
+      return;
+    }
+
+    highlights.style.marginTop = '0px';
+    const delta = secondaryVisual.getBoundingClientRect().top - highlights.getBoundingClientRect().top;
+    highlights.style.marginTop = `${Math.max(0, Math.round(delta))}px`;
+  }
+
+  function alignCaseStudyBlocks() {
+    alignResponsibilityVisuals();
+    alignResearchHighlightsWithSecondaryVisual();
+  }
+
+  window.addEventListener('load', alignCaseStudyBlocks);
+  window.addEventListener('resize', alignCaseStudyBlocks);
+  alignCaseStudyBlocks();
+</script>
+</body>
+</html>
