@@ -117,7 +117,7 @@ nav {
   text-transform: uppercase;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
-.nav-cta:hover { color: var(--muted); border-color: var(--line); }
+.nav-cta:hover { color: var(--text); border-color: var(--line); }
 
 .nav-toggle {
   display: none;
@@ -161,7 +161,7 @@ nav {
 }
 
 .hero {
-  min-height: clamp(460px, 72vh, 760px);
+  min-height: clamp(440px, 68vh, 700px);
   padding-top: 0;
   display: flex;
   align-items: center;
@@ -285,10 +285,12 @@ nav {
   max-width: none;
   width: 100%;
   margin: 0 auto;
-  padding: 96px 32px 196px;
+  padding: 64px 0 72px;
 }
 #format {
   background: transparent;
+  padding-left: 0;
+  padding-right: 0;
 }
 .format-inner {
   max-width: 1220px;
@@ -459,8 +461,8 @@ section {
   margin-bottom: 32px;
 }
 #what {
-  margin-bottom: 100px;
-  padding-top: 80px;
+  margin-bottom: 0;
+  padding-top: 48px;
 }
 #install .section-title {
   font-family: 'Manrope', sans-serif;
@@ -487,7 +489,7 @@ section {
 
 .case-list {
   display: grid;
-  gap: 68px;
+  gap: 0;
   margin-top: 24px;
 }
 
@@ -495,6 +497,12 @@ section {
   display: flex;
   align-items: stretch;
   gap: 36px;
+}
+
+.case-item + .case-item {
+  border-top: 1px solid rgba(20, 20, 20, 0.08);
+  margin-top: 48px;
+  padding-top: 48px;
 }
 
 .case-media {
@@ -555,6 +563,10 @@ section {
   text-transform: uppercase;
   color: var(--text);
   margin: 0 0 6px;
+}
+
+.case-client-top {
+  display: none;
 }
 
 .case-title {
@@ -677,6 +689,10 @@ section {
   align-items: baseline;
   justify-content: space-between;
   gap: 12px;
+}
+
+.product-subtitle-top {
+  display: none;
 }
 
 .product-subtitle-year {
@@ -945,6 +961,15 @@ footer {
     height: 58px;
   }
 
+  nav.nav-scrolled {
+    background: #ffffff;
+    border-bottom-color: var(--line);
+  }
+
+  nav.menu-open {
+    border-bottom-color: var(--line);
+  }
+
   .nav-toggle {
     display: inline-flex;
     align-items: center;
@@ -961,13 +986,22 @@ footer {
     align-items: stretch;
     gap: 14px;
     padding: 18px;
-    background: var(--bg-soft);
+    background: #A3BEDE;
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
     border-left: 0;
     border-right: 0;
     border-radius: 0;
     box-shadow: 0 20px 40px rgba(20, 20, 20, 0.08);
+    transition: background 0.1s linear, border-color 0.1s linear;
+  }
+
+  nav.nav-scrolled .nav-menu {
+    background: #ffffff;
+  }
+
+  nav.menu-open .nav-menu {
+    background: inherit;
   }
 
   nav.menu-open .nav-menu {
@@ -988,15 +1022,34 @@ footer {
   }
 
   .nav-cta {
-    justify-content: center;
-    width: 100%;
+    justify-content: flex-start;
+    width: fit-content;
+    align-self: flex-start;
+    padding: 0;
+    padding-bottom: 8px;
+    border: none;
+    border-bottom: 1px solid transparent;
+    border-radius: 0;
+    letter-spacing: 0.14em;
+    font-size: 12px;
+    font-weight: 700;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .nav-cta:hover {
+    color: #141414;
+    border-bottom-color: #141414;
   }
 
   .hero {
     min-height: auto;
-    padding: 108px 0 72px;
+    padding: 108px 0 66px;
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .hero-inner {
+    padding: 0 18px;
   }
 
   .hero-pre-greeting {
@@ -1004,12 +1057,16 @@ footer {
     left: auto;
     right: auto;
     bottom: auto;
-    width: 100%;
+    width: fit-content;
     margin: 0 0 18px;
     padding: 0;
     font-size: 11px;
     line-height: 1.4;
     letter-spacing: 0.12em;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 4px;
   }
 
   .hero-intro {
@@ -1022,11 +1079,45 @@ footer {
 
   .products-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 52px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .product-item {
+    width: 100%;
+  }
+
+  .product-subtitle-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 4px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .product-subtitle-top .product-subtitle-year {
+    margin-left: 0;
+    font-weight: 400;
+  }
+
+  .product-item > .product-subtitle {
+    display: none;
+  }
+
+  .product-square {
+    width: calc(100% + 36px);
+    margin-left: -18px;
+    margin-right: -18px;
   }
 
   .case-list {
-    gap: 34px;
+    gap: 32px;
   }
 
   .case-item {
@@ -1034,9 +1125,34 @@ footer {
     gap: 18px;
   }
 
+  .case-item + .case-item {
+    border-top: 1px solid rgba(20, 20, 20, 0.08);
+    margin-top: 0;
+    padding-top: 32px;
+  }
+
   .case-media {
-    width: 100%;
+    width: calc(100% + 36px);
+    margin-left: -18px;
+    margin-right: -18px;
     height: clamp(180px, 42vw, 280px);
+  }
+
+  .case-client-top {
+    display: block;
+    font-size: 11px;
+  }
+
+  .case-content .case-client {
+    display: none;
+  }
+
+  .case-content {
+    padding-top: 6px;
+  }
+
+  .case-content .arrow-link {
+    font-size: 14px !important;
   }
 
 
@@ -1061,15 +1177,54 @@ footer {
   }
 
   #what {
-    margin-bottom: 48px;
-    padding-top: 56px;
+    margin-bottom: 8px;
+    padding-top: 40px;
+  }
+
+  #what .section-head {
+    margin-bottom: 12px;
+  }
+
+  #what .case-list {
+    margin-top: 0;
   }
 
   #more-products {
-    padding-top: 64px;
+    padding-top: 12px;
     padding-bottom: 92px;
     padding-left: 18px;
     padding-right: 18px;
+    overflow-x: clip;
+  }
+
+  #more-products .format-inner {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #format {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  #format .format-inner {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  #more-products .section-head,
+  #more-products .section-title {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  #more-products .section-title {
+    margin-top: 12px;
+    margin-bottom: 20px;
   }
 
   .metrics,
@@ -1095,7 +1250,8 @@ footer {
       <li><a href="#what" class="active" aria-current="page">Work</a></li>
       <li><a href="#format">About</a></li>
     </ul>
-<a href="cv.html" class="nav-cta">View CV</a>  </div>
+    <a href="cv.html" class="nav-cta">View CV</a>
+  </div>
 </nav>
 
 <main id="top">
@@ -1103,11 +1259,10 @@ footer {
     <div class="hero-inner">
       <p class="hero-intro"><span class="hero-name">Hey, I'm Natacha and</span><span class="hero-cursor" aria-hidden="true">|</span><span class="hero-prompt">Describe what I do</span><span class="hero-typed" data-full-text=" I'm an Experience Designer exploring how people and intelligent systems create better outcomes together."></span></p>
       <p class="hero-pre-greeting">
-        <span>Portfolio built from scratch with AI-assisted tools</span>
-        <svg class="hero-pre-greeting-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <span>Portfolio built from scratch with AI-assisted tools <svg class="hero-pre-greeting-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:inline;vertical-align:middle;width:14px;height:14px;">
           <path fill="var(--text)" d="M45 8 L53 34 L79 42 L53 50 L45 76 L37 50 L11 42 L37 34 Z" />
           <path fill="var(--text)" d="M76 8 L80 20 L92 24 L80 28 L76 40 L72 28 L60 24 L72 20 Z" />
-        </svg>
+        </svg></span>
       </p>
     </div>
   </section>
@@ -1124,6 +1279,7 @@ footer {
 
     <div class="case-list">
       <article class="case-item">
+        <p class="case-client case-client-top">Critical Techworks | A BMW GROUP COMPANY</p>
         <a href="case-study-1.html" aria-label="Open case study: Decision support for water operations" class="case-media case-media-ops">
           <video autoplay muted playsinline preload="metadata" aria-hidden="true" data-loop-delay="3000">
             <source src="ph11.mp4" type="video/mp4">
@@ -1143,6 +1299,7 @@ footer {
       </article>
 
       <article class="case-item">
+        <p class="case-client case-client-top">BCG Digital Ventures (BCGX)</p>
         <a href="case-study-2.html" aria-label="Open case study: Designing an AR Vision Care Journey in China" class="case-media case-media-mu"></a>
         <div class="case-content">
           <p class="case-client">BCG Digital Ventures (BCGX)</p>
@@ -1158,6 +1315,7 @@ footer {
       </article>
 
       <article class="case-item">
+        <p class="case-client case-client-top">Suez Environnement + PUB Singapore</p>
         <a href="case-study-3.html" aria-label="Open case study: Product strategy and growth experiments" class="case-media case-media-sg"></a>
         <div class="case-content">
           <p class="case-client">Suez Environnement + PUB Singapore</p>
@@ -1184,26 +1342,32 @@ footer {
 
     <div class="products-grid" aria-label="Additional product work">
       <article class="product-item">
+        <p class="product-subtitle-top"><span>BCG DV Growth &amp; Development Rethinked</span><span class="product-subtitle-year">2018</span></p>
         <div class="product-square product-square-bcg" aria-hidden="true"></div>
         <p class="product-subtitle"><span>BCG DV Growth &amp; Development Rethinked</span><span class="product-subtitle-year">2018</span></p>
       </article>
       <article class="product-item">
+        <p class="product-subtitle-top"><span>Babbel E-Learning Startup</span><span class="product-subtitle-year">2017</span></p>
         <div class="product-square product-square-bab" aria-hidden="true"></div>
         <p class="product-subtitle"><span>Babbel E-Learning Startup</span><span class="product-subtitle-year">2017</span></p>
       </article>
       <article class="product-item">
+        <p class="product-subtitle-top"><span>Singapore Zoo Ticketing Checkout</span><span class="product-subtitle-year">2015</span></p>
         <div class="product-square product-square-sg-control" aria-hidden="true"></div>
         <p class="product-subtitle"><span>Singapore Zoo Ticketing Checkout</span><span class="product-subtitle-year">2015</span></p>
       </article>
       <article class="product-item">
+        <p class="product-subtitle-top"><span>Halza Health</span><span class="product-subtitle-year">2015</span></p>
         <div class="product-square product-square-sg-research" aria-hidden="true"></div>
         <p class="product-subtitle"><span>Halza Health</span><span class="product-subtitle-year">2015</span></p>
       </article>
       <article class="product-item">
+        <p class="product-subtitle-top"><span>UTU Loyalty Program</span><span class="product-subtitle-year">2015</span></p>
         <div class="product-square product-square-mu-design" aria-hidden="true"></div>
         <p class="product-subtitle"><span>UTU Loyalty Program</span><span class="product-subtitle-year">2015</span></p>
       </article>
       <article class="product-item">
+        <p class="product-subtitle-top"><span>AT&amp;T U-verse TV</span><span class="product-subtitle-year">2010</span></p>
         <div class="product-square product-square-mu-test" aria-hidden="true"></div>
         <p class="product-subtitle"><span>AT&amp;T U-verse TV</span><span class="product-subtitle-year">2010</span></p>
       </article>
@@ -1457,9 +1621,16 @@ footer {
     }
   });
 
+  function updateNavScrollState() {
+    var scrollThreshold = mobileQuery.matches ? 120 : 10;
+    nav.classList.toggle('nav-scrolled', window.scrollY > scrollThreshold);
+  }
+
   window.addEventListener('scroll', updateActiveLinkOnScroll, { passive: true });
+  window.addEventListener('scroll', updateNavScrollState, { passive: true });
   window.addEventListener('resize', updateActiveLinkOnScroll);
   updateActiveLinkOnScroll();
+  updateNavScrollState();
   initHeroTyping();
   initDelayedVideoLoops();
 

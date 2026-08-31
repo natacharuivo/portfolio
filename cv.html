@@ -131,6 +131,7 @@ main {
 }
 
 .cv-name-label {
+  display: none;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -152,7 +153,72 @@ main {
 .role-meta {
   color: var(--muted);
   font-size: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 29px;
+}
+
+.role-logos {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.role-logo {
+  height: 32px;
+  width: auto;
+}
+
+.role-logo-bcg {
+  height: 44px;
+  transform: translateY(-5px);
+}
+
+.role-logo-babbel {
+  height: 24px;
+}
+
+.shortcut-role .role-logo {
+  height: 20px;
+}
+
+.shortcut-role .pfi-logo {
+  height: 22px;
+}
+
+.minitheory-role .role-logo {
+  height: 32px;
+}
+
+.minitheory-role {
+  margin-top: 2px;
+}
+
+.minitheory-role .role-logos {
+  align-items: center;
+}
+
+.minitheory-role .sue-logo {
+  height: 18px;
+  transform: translateY(3px);
+}
+
+.mobients-role .role-logo {
+  height: 24px;
+}
+
+.mobients-role .role-logos {
+  align-items: center;
+}
+
+.mobients-role .mobients-logo {
+  height: 12px;
+}
+
+.mobients-role .at-logo {
+  height: 24px;
+}
+
+.print-raster-logo {
+  image-rendering: auto;
 }
 
 .gap-year-note {
@@ -180,7 +246,33 @@ main {
 }
 
 .education-block {
-  margin-top: 30px;
+  margin-top: 0;
+}
+
+.awards-block {
+  margin-top: 32px;
+}
+
+.awards-block .side-title {
+  margin-bottom: 24px;
+}
+
+.education-block .side-title {
+  margin-bottom: 34px;
+}
+
+@media screen {
+  .awards-block,
+  .skills-block,
+  .contact-block {
+    margin-top: 48px;
+  }
+
+  .awards-block .side-title,
+  .skills-block .side-title,
+  .contact-block .side-title {
+    margin-bottom: 34px;
+  }
 }
 
 .side-title {
@@ -189,6 +281,19 @@ main {
   line-height: 1;
   font-weight: 700;
   margin-bottom: 12px;
+}
+
+.side-title.with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.side-title-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  display: block;
 }
 
 .side-item {
@@ -213,6 +318,15 @@ main {
   margin-bottom: 2px;
 }
 
+.awards-block .side-item strong {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.awards-block .side-item p {
+  font-size: 11px;
+}
+
 .side-item p {
   font-size: 14px;
   color: var(--muted);
@@ -234,32 +348,41 @@ body.pdf-export main {
 
 body.pdf-export .cv-sheet {
   width: 210mm;
-  height: 297mm;
-  padding: 8mm;
-  overflow: hidden;
+  height: auto;
+  min-height: 0;
+  padding: 14mm 10mm 8mm;
+  overflow: visible;
 }
 
 body.pdf-export .cv-grid {
-  gap: 6mm;
+  gap: 12mm;
 }
 
 body.pdf-export .cv-grid > aside {
-  padding-top: 0;
+  padding-top: 128px;
 }
 
 body.pdf-export .section-title {
   font-size: 30px;
-  line-height: 1.05;
-  margin-bottom: 12px;
+  line-height: 1.08;
+  margin-bottom: 62px;
 }
 
 body.pdf-export .role {
-  margin-bottom: 8px;
+  margin-bottom: 25px;
   break-inside: avoid;
+}
+
+body.pdf-export section > .role:first-of-type {
+  margin-top: 0;
 }
 
 body.pdf-export .role-company {
   font-size: 13px;
+}
+
+body.pdf-export .role + .role {
+  margin-top: 25px;
 }
 
 body.pdf-export .role-meta,
@@ -271,21 +394,80 @@ body.pdf-export .side-title,
 body.pdf-export .side-block-note,
 body.pdf-export .side-title-note {
   font-size: 11px;
-  line-height: 1.28;
+  line-height: 1.35;
+}
+
+body.pdf-export .role-meta {
+  margin-bottom: 10px;
+}
+
+body.pdf-export .role-logos {
+  margin-bottom: 12px;
+}
+
+body.pdf-export .minitheory-role {
+  margin-top: 0;
+}
+
+body.pdf-export .minitheory-role .role-logos,
+body.pdf-export .mobients-role .mobients-logo {
+  display: none;
+}
+
+body.pdf-export .role-logo {
+  height: 23px;
+  width: auto;
+}
+
+body.pdf-export .role-logo-bcg {
+  height: 32px;
+}
+
+body.pdf-export .role-logo-babbel {
+  height: 15px;
+}
+
+body.pdf-export .minitheory-role .sue-logo {
+  height: 14px;
+}
+
+body.pdf-export .mobients-role .mobients-logo {
+  height: 14px;
+}
+
+body.pdf-export .mobients-role .at-logo {
+  height: 18px;
+}
+
+body.pdf-export .print-raster-logo {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 body.pdf-export .side-item strong,
 body.pdf-export .side-title {
+  font-size: 13px;
   font-weight: 700;
 }
 
+body.pdf-export .awards-block .side-item strong,
+body.pdf-export .awards-block .side-item p {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+body.pdf-export .side-title-icon {
+  width: 24px;
+  height: 24px;
+}
+
 body.pdf-export .side-block {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   break-inside: avoid;
 }
 
 body.pdf-export aside .side-block + .side-block {
-  padding-top: 16px;
+  padding-top: 10px;
 }
 
 body.pdf-export .side-item {
@@ -293,8 +475,8 @@ body.pdf-export .side-item {
 }
 
 body.pdf-export .awards-list {
-  column-count: 2;
-  column-gap: 10px;
+  column-count: 1;
+  column-gap: 0;
 }
 
 body.pdf-export .awards-list .side-item {
@@ -302,17 +484,25 @@ body.pdf-export .awards-list .side-item {
 }
 
 body.pdf-export .role ul {
-  gap: 3px;
+  gap: 4px;
 }
 
 body.pdf-export .gap-year-note {
-  margin-bottom: 8px;
+  break-before: page;
+  page-break-before: always;
+  margin-top: 60px;
+  margin-bottom: 18px;
 }
 
 body.pdf-export .shortcut-role {
-  break-before: page;
-  page-break-before: always;
-  padding-top: 12mm;
+  break-before: auto;
+  page-break-before: auto;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+body.pdf-export .mobients-role {
+  margin-top: 4px;
 }
 
 .pdf-scale-wrap {
@@ -351,7 +541,7 @@ body.pdf-export .shortcut-role {
 @media print {
   @page {
     size: A4;
-    margin: 6mm 10mm 10mm;
+    margin: 8mm 10mm 12mm;
   }
 
   @page:first {
@@ -372,6 +562,10 @@ body.pdf-export .shortcut-role {
     display: none;
   }
 
+  .cv-name-label {
+    display: block;
+  }
+
   main {
     margin: 0;
     max-width: none;
@@ -384,32 +578,138 @@ body.pdf-export .shortcut-role {
   }
 
   .cv-grid {
-    gap: 24px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: 18px;
+  }
+
+  .cv-grid > aside {
+    padding-top: 18px;
+  }
+
+  .education-block {
+    margin-top: 0;
   }
 
   .role {
-    margin-bottom: 18px;
+    margin-bottom: 14px;
   }
 
   .side-block {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   aside .side-block + .side-block {
-    padding-top: 16px;
+    padding-top: 10px;
   }
 
   .side-item {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   .section-title {
-    margin-bottom: 52px;
+    font-size: 28px;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+
+  section > .role:first-of-type {
+    margin-top: 0;
+  }
+
+  .role-company {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .role-meta,
+  .role-context,
+  .role li {
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .role ul {
+    gap: 5px;
+  }
+
+  .gap-year-note {
+    margin: 10px 0 16px;
+  }
+
+  .role-meta {
+    margin-bottom: 10px;
+  }
+
+  .role-logos {
+    margin-bottom: 18px;
+  }
+
+  .minitheory-role {
+    margin-top: -6px;
+  }
+
+  .minitheory-role .role-logos,
+  .mobients-role .mobients-logo {
+    display: none;
+  }
+
+  .role-logo {
+    height: 26px;
+    width: auto;
+  }
+
+  .role-logo-bcg {
+    height: 36px;
+  }
+
+  .role-logo-babbel {
+    height: 17px;
+  }
+
+  .minitheory-role .sue-logo {
+    height: 14px;
+  }
+
+  .mobients-role .mobients-logo {
+    height: 14px;
+  }
+
+  .mobients-role .at-logo {
+    height: 18px;
+  }
+
+  .print-raster-logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  .side-title {
+    font-size: 14px;
+  }
+
+  .side-title-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .side-item strong {
+    font-size: 13px;
+  }
+
+  .awards-block .side-item strong {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .side-item p,
+  .side-block-note,
+  .side-title-note {
+    font-size: 12px;
+    line-height: 1.45;
   }
 
   .awards-list {
-    column-count: 2;
-    column-gap: 10px;
+    column-count: 1;
   }
 
   .awards-list .side-item {
@@ -420,7 +720,12 @@ body.pdf-export .shortcut-role {
     break-before: page;
     page-break-before: always;
     margin-top: 0;
-    padding-top: 12mm;
+    padding-top: 18mm;
+  }
+
+  .contact-block {
+    margin-top: 0;
+    padding-top: 0;
   }
 }
 </style>
@@ -442,7 +747,11 @@ body.pdf-export .shortcut-role {
 
         <article class="role">
           <p class="role-company">Senior UXD at Critical Techworks | a BMW Group Company</p>
-          <p class="role-meta">Fev 2020 - Present&ensp;·&ensp; Lisbon | Germany</p>
+          <p class="role-meta">Fev 2020 - Present&ensp;·&ensp; Portugal | Germany</p>
+          <div class="role-logos">
+            <img src="ct_logo.png" alt="Critical Techworks Logo" class="role-logo">
+            <img src="black-white-bmw-logo.svg" alt="BMW Logo" class="role-logo">
+          </div>
           <p class="role-context">Critical TechWorks is a joint venture to lead the future of motion. We're developing the next generation of software systems for the BMW's future driving machines.</p>
           <ul>
             <li>Designed BMW in-car Media and Entertainment experiences across multi-display ecosystems for front and rear seats, creating seamless cross-screen interactions for drivers and passengers.</li>
@@ -454,6 +763,10 @@ body.pdf-export .shortcut-role {
         <article class="role">
           <p class="role-company">Senior Experience Design at BCG Digital Ventures (BCGX)</p>
           <p class="role-meta">Jun 2018 - Jan 2020 &ensp;·&ensp; Germany | China</p>
+          <div class="role-logos">
+            <img src="bc_logo.png" alt="BCG Logo" class="role-logo role-logo-bcg">
+            <img src="zz_logo.svg" alt="ZZ Logo" class="role-logo">
+          </div>
           <p class="role-context">BCG Digital Ventures, part of BCG X, builds and scales innovative businesses with the world's most influential companies.</p>
           <ul>
             <li>Designed a digital vision care venture for Zeiss in China with AR virtual try-on and Machine Learning-driven personalization, from product discovery and validation through build and launch.</li>
@@ -464,14 +777,21 @@ body.pdf-export .shortcut-role {
         <article class="role">
           <p class="role-company">Senior Product Designer at Babbel</p>
           <p class="role-meta">April 2017 - Jun 2018&ensp;·&ensp; Germany</p>
+          <div class="role-logos">
+            <img src="bb_logo.svg" alt="Babbel Logo" class="role-logo role-logo-babbel">
+          </div>
           <ul>
             <li>Led product design across multiple initiatives, delivering end-to-end experiences in close collaboration with cross-functional teams. Drove consistency across products, improved design processes and practices, and supported team growth through weekly 1:1 mentoring.</li>
           </ul>
         </article>
 
-        <article class="role">
+        <article class="role minitheory-role">
           <p class="role-company">Senior UXD &amp; Business Development at Minitheory</p>
           <p class="role-meta">Jan 2015 - Mar 2017&ensp;·&ensp; Singapore</p>
+          <div class="role-logos">
+            <img src="mm_logo.svg" alt="Minitheory Logo" class="role-logo">
+            <img src="sue_logo.svg" alt="SUE Logo" class="role-logo sue-logo">
+          </div>
           <ul>
             <li>As the UX Lead Designer, I focused on mobile apps, responsive web, and software projects for enterprises, organizations, and startups within various sectors.</li>
             <li>Led a project with SUEZ and Singapore's National Water Agency (PUB) to develop a system that improved water supply monitoring and flood prevention. The solution enabled event prediction, supported decision-making, and reduced response times for water quality issues.</li>
@@ -483,17 +803,21 @@ body.pdf-export .shortcut-role {
         <article class="role shortcut-role">
           <p class="role-company">UX/UI Product Designer at Shortcut AS</p>
           <p class="role-meta">Aug 2012 - Dec 2013&ensp;·&ensp; Norway</p>
-          <ul>
-            <li>Designed iOS and Android applications for healthcare (Pfizer), finance (Nordea Bank), and a B2B iPad tool (Adecco) from research to pixel-perfect execution, working in close collaboration with developers.</li>
-          </ul>
+          <div class="role-logos">
+            <img src="shortc.svg" alt="Shortcut Logo" class="role-logo">
+            <img src="pfi_logo.svg" alt="PFI Logo" class="role-logo pfi-logo">
+          </div>
+          <p class="role-context">Designed iOS and Android applications for healthcare (Pfizer), finance (Nordea Bank), and a B2B iPad tool (Adecco) from research to pixel-perfect execution, working in close collaboration with developers.</p>
         </article>
 
-        <article class="role">
+        <article class="role mobients-role">
           <p class="role-company">UX Designer at Mobients Inc</p>
           <p class="role-meta">Jul 2011 - Jul 2012&ensp;·&ensp; United States</p>
-          <ul>
-            <li>Worked across various teams and departments, responsible for designing UX flows and wireframes as part of a one year project for the telecom AT&amp;T.</li>
-          </ul>
+          <div class="role-logos">
+            <img src="mob_logo.svg" alt="Mobients Logo" class="role-logo mobients-logo print-raster-logo">
+            <img src="at_logo.svg" alt="AT&T Logo" class="role-logo at-logo print-raster-logo">
+          </div>
+          <p class="role-context">Worked across various teams and departments, responsible for designing UX flows and wireframes as part of a one year project for the telecom AT&amp;T, U-verse App for iOS and Android. AOT 4.9 million downloads.</p>
         </article>
       </section>
 
@@ -514,45 +838,46 @@ body.pdf-export .shortcut-role {
           <h3 class="side-title">Academic Honors &amp; Awards</h3>
           <div class="awards-list">
           <div class="side-item">
-            <span style="font-size: 14px;">Best Interaction Design Student Prize</span>
+            <strong>Best Interaction Design Student Prize</strong>
             <p>Issued by Making Waves &ensp;·&ensp; Jun 2010</p>
           </div>
           <div class="side-item">
-            <span style="font-size: 14px;">Best Courage in Design Student (Nominated)</span>
+            <strong>Best Courage in Design Student (Nominated)</strong>
             <p>Issued by Accenture &ensp;·&ensp; Jun 2010</p>
           </div>
           <div class="side-item">
-            <span style="font-size: 14px;">Best Innovation in Design Student Prize (Nominated)</span>
+            <strong>Best Innovation in Design Student Prize (Nominated)</strong>
             <p>Issued by Norwegian Design Council &ensp;·&ensp; Jun 2010</p>
           </div>
           <div class="side-item">
-            <span style="font-size: 14px;">European Talent Awards (Pre-Selected)</span>
+            <strong>European Talent Awards (Pre-Selected)</strong>
             <p>Issued by Talent Awards &ensp;·&ensp; Jun 2008</p>
           </div>
           <div class="side-item">
-            <span style="font-size: 14px;">Best Design for all Student Prize</span>
+            <strong>Best Design for all Student Prize</strong>
             <p>Issued by Gazzete &ensp;·&ensp; Jan 2008</p>
           </div>
           <div class="side-item">
-            <span style="font-size: 14px;">Best Design for all Class Prize</span>
+            <strong>Best Design for all Class Prize</strong>
             <p>Issued by Gazzete &ensp;·&ensp; Dec 2007</p>
           </div>
           </div>
         </section>
 
-        <section class="side-block">
+        <section class="side-block skills-block">
           <h3 class="side-title">Skills</h3>
           <div class="side-item">
             <p class="skills-line">User Research • Service Design • Full Product Lifecycle, from Discovery to Delivery • Design Systems • Exploring AI Assisted &amp; AI Native Tools • Product Strategy • Cross-functional Leadership • Stakeholder Management • Design Mentoring</p>
           </div>
         </section>
 
-        <section class="side-block">
+        <section class="side-block contact-block">
           <h3 class="side-title">Contact</h3>
           <div class="side-item">
             <strong>Email</strong>
-            <p>natachaamruivo@gmail.com</p>
+            <p>natachamruivo@gmail.com</p>
             <p>+351 933395252</p>
+            <p>www.natacharuivo.com</p>
             <p><a href="https://www.linkedin.com/in/natacharuivo/?skipRedirect=true" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
           </div>
         </section>
@@ -565,9 +890,17 @@ body.pdf-export .shortcut-role {
 
   if (downloadCvBtn) {
     downloadCvBtn.addEventListener('click', function () {
+      document.body.classList.add('pdf-export');
       window.print();
+      setTimeout(function () {
+        document.body.classList.remove('pdf-export');
+      }, 500);
     });
   }
+
+  window.addEventListener('afterprint', function () {
+    document.body.classList.remove('pdf-export');
+  });
 </script>
 </body>
 </html>
