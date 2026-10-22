@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 220" role="img" aria-label="Halza logo">
+  <title>Halza</title>
+  <defs>
+    <style>
+      .bubble-shadow { fill: #4a4a4a; }
+      .bubble-main { fill: #71c7c8; }
+      .wave { fill: none; stroke: #ffffff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 12; }
+      .word { fill: #000000; font-family: Arial, Helvetica, sans-serif; font-weight: 700; letter-spacing: -4px; }
+    </style>
+  </defs>
+
+  <g transform="translate(0 0)">
+    <path class="bubble-shadow" d="M35 128c0-32 26-58 58-58h134c32 0 58 26 58 58v30c0 32-26 58-58 58H127l-54 41 13-41H93c-32 0-58-26-58-58v-30z"/>
+    <path class="bubble-main" d="M140 32h152c32 0 58 26 58 58v24c0 32-26 58-58 58H218l-53 36 11-36H292c32 0 58-26 58-58V90c0-32-26-58-58-58H140z"/>
+    <path class="wave" d="M174 120h19l20-23 18 33 24-43 18 33h19"/>
+  </g>
+
+  <text class="word" x="470" y="142" font-size="118">HALZA</text>
+</svg>

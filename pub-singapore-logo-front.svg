@@ -1,0 +1,19 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="420" fill="white"/>
+
+  <g transform="translate(55,25)">
+    <g transform="translate(0,20)">
+      <path d="M128 262C128 192 187 138 257 138C328 138 385 192 385 262" stroke="#0D2A6C" stroke-width="30" stroke-linecap="round"/>
+      <path d="M122 136C170 97 227 76 288 76C332 76 372 86 405 105C333 89 268 82 209 95C178 101 148 112 122 136Z" fill="#0D2A6C" opacity="0.96"/>
+      <path d="M119 190C171 157 228 144 286 145C318 146 348 150 377 158C339 149 300 145 262 149C220 154 177 165 119 190Z" fill="#14A7B8" opacity="0.95"/>
+      <path d="M111 228C160 205 214 196 271 196C321 196 369 204 411 223C373 217 332 213 286 214C239 215 194 220 111 228Z" fill="#14A7B8" opacity="0.9"/>
+    </g>
+
+    <g>
+      <text x="460" y="185" font-family="Arial, Helvetica, sans-serif" font-size="200" font-weight="700" fill="#0D2A6C" letter-spacing="-8">PUB</text>
+
+      <text x="440" y="315" font-family="Arial, Helvetica, sans-serif" font-size="65" font-weight="700" fill="#0D2A6C" letter-spacing="1">SINGAPORE'S</text>
+      <text x="440" y="385" font-family="Arial, Helvetica, sans-serif" font-size="65" font-weight="700" fill="#0D2A6C" letter-spacing="1">NATIONAL WATER AGENCY</text>
+    </g>
+  </g>
+</svg>
