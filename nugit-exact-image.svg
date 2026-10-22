@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-label="Nugit logo">
+  <title>Nugit</title>
+  <rect width="900" height="320" fill="#A1B7D8"/>
+  <g fill="none" stroke="#F3F0E8" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M220 88v68c0 43-35 78-78 78s-78-35-78-78V88c0-44 35-80 80-80 43 0 76 36 76 80z"/>
+    <path d="M140 92h48c26 0 47 21 47 47v12c0 26-21 47-47 47h-48"/>
+    <path d="M140 170v36h43"/>
+    <path d="M120 210h103"/>
+    <path d="M185 105c0 0 18-19 38-19 23 0 41 18 41 40s-18 42-40 42h-28"/>
+  </g>
+  <text x="230" y="220" font-family="Arial, Helvetica, sans-serif" font-size="250" font-weight="600" letter-spacing="-18" fill="#F3F0E8" font-style="italic">nugit</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 220" role="img" aria-label="Halza logo">
+  <title>Halza</title>
+  <g fill="#000000">
+    <path d="M42 38h118c28.7 0 52 23.3 52 52v28c0 28.7-23.3 52-52 52H96l-27.9 28.4c-2.2 2.3-5.9 1.7-7.3-1.3L52 170H42c-28.7 0-52-23.3-52-52V90c0-28.7 23.3-52 52-52zm20 30c-17.7 0-32 14.3-32 32v12c0 17.7 14.3 32 32 32h98c17.7 0 32-14.3 32-32V70c0-17.7-14.3-32-32-32H62z"/>
+    <path d="M92 59c-8 0-14.5 6.5-14.5 14.5S84 88 92 88h32c8 0 14.5-6.5 14.5-14.5S132 59 124 59H92zm-8 44h48c4.4 0 8 3.6 8 8s-3.6 8-8 8H84c-4.4 0-8-3.6-8-8s3.6-8 8-8zm0 24h34c4.4 0 8 3.6 8 8s-3.6 8-8 8H84c-4.4 0-8-3.6-8-8s3.6-8 8-8z" fill="#000000"/>
+  </g>
+  <text x="214" y="140" font-family="Arial, Helvetica, sans-serif" font-size="118" font-weight="700" letter-spacing="-4" fill="#000000">HALZA</text>
+</svg>

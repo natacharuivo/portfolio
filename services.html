@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natacha Ruivo | Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#f6f1ea; --paper:#fff; --text:#141414; --muted:#6a645d; --line:rgba(20,20,20,.12); --shadow:0 20px 60px rgba(17,17,17,.08); }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; min-height:100vh; background:var(--bg); color:var(--text); font-family:'Manrope',sans-serif; }
+a { color:inherit; }
+nav { position:sticky; top:0; z-index:20; height:88px; display:flex; align-items:center; padding:0 36px; background:rgba(246,241,234,.92); backdrop-filter:blur(16px); border-bottom:1px solid var(--line); }
+.nav-brand { text-decoration:none; font-weight:800; letter-spacing:-.03em; }
+.nav-links { margin-left:auto; display:flex; gap:24px; list-style:none; padding:0; }
+.nav-links a { text-decoration:none; font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; padding-bottom:6px; border-bottom:1px solid transparent; }
+.nav-links a.active { border-bottom-color:currentColor; }
+main { max-width:1220px; margin:0 auto; padding:44px 32px 90px; }
+.page-kicker { font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:16px; }
+.page-title { font-size:clamp(40px,6vw,74px); line-height:.95; letter-spacing:-.05em; margin:0; max-width:12ch; }
+.page-intro { max-width:780px; margin-top:18px; font-size:17px; line-height:1.65; color:var(--muted); }
+.section { margin-top:54px; padding-top:26px; border-top:1px solid var(--line); }
+.section-head { display:flex; justify-content:space-between; gap:20px; align-items:end; margin-bottom:22px; }
+.section-title { margin:0; font-size:18px; font-weight:800; letter-spacing:-.03em; }
+.section-note { margin:0; color:var(--muted); max-width:42ch; }
+.service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.service-card { background:var(--paper); box-shadow:var(--shadow); border:1px solid rgba(20,20,20,.08); padding:20px; display:grid; gap:10px; min-height:220px; }
+.service-index { font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+.service-card h3 { margin:0; font-size:20px; line-height:1.05; letter-spacing:-.03em; }
+.service-card p { margin:0; color:var(--muted); line-height:1.6; }
+.service-cta { margin-top:28px; display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 18px; border:1px solid var(--text); text-decoration:none; font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+.site-footer { padding:18px 24px 24px 36px; font-size:10px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; color:rgba(20,20,20,.5); }
+@media (max-width:900px) { .service-grid { grid-template-columns:1fr; } .section-head { flex-direction:column; align-items:start; } }
+@media (max-width:760px) { nav { padding:0 18px; } main { padding:32px 18px 72px; } .nav-links { gap:14px; overflow-x:auto; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="home.html" class="nav-brand">NATACHA RUIVO</a>
+  <ul class="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="services.html" class="active" aria-current="page">Services</a></li>
+    <li><a href="index.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<main>
+  <div class="page-kicker">Services</div>
+  <h1 class="page-title">What I help teams design.</h1>
+  <p class="page-intro">A focused set of capabilities for complex products, AI-powered experiences, and end-to-end journeys. These are the kinds of problems I help teams move through with clarity and momentum.</p>
+
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">Capabilities</h2>
+      <p class="section-note">The mix of design, strategy, and facilitation that shows up across projects.</p>
+    </div>
+    <div class="service-grid">
+      <article class="service-card"><div class="service-index">01</div><h3>Human-Centered AI</h3><p>Designing AI-powered experiences that balance automation, trust, and usability.</p></article>
+      <article class="service-card"><div class="service-index">02</div><h3>Complex Systems Design</h3><p>Transforming sophisticated platforms and workflows into intuitive user experiences.</p></article>
+      <article class="service-card"><div class="service-index">03</div><h3>Product Strategy &amp; Validation</h3><p>Reducing risk through research, testing, and evidence-based decision making.</p></article>
+      <article class="service-card"><div class="service-index">04</div><h3>Service Design</h3><p>Connecting products, services, and operations into seamless end-to-end journeys.</p></article>
+      <article class="service-card"><div class="service-index">05</div><h3>Workshop Facilitation</h3><p>Aligning teams, accelerating decisions, and creating momentum.</p></article>
+      <article class="service-card"><div class="service-index">06</div><h3>Enterprise &amp; Consumer Products</h3><p>From automotive and healthcare to education and sustainability, designing products that scale across industries.</p></article>
+    </div>
+    <a class="service-cta" href="contact.html">Start a conversation</a>
+  </section>
+</main>
+<footer class="site-footer">Natacha Ruivo · Portfolio</footer>
+</body>
+</html>
